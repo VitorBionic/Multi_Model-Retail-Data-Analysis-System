@@ -14,63 +14,84 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String gender;
-    private String director;
-    private int duration;
+    private String description;
+    private Integer releaseYear;
+    private String genre;
+    private Integer duration;
+    private Double currentPrice;
     
     public Film() {}
-    
-    public Film(Long id, String title, String gender, String director, int duration) {
+
+    public Film(Long id, String title, String description, Integer releaseYear, String genre, Integer duration,
+            Double currentPrice) {
         this.id = id;
         this.title = title;
-        this.gender = gender;
-        this.director = director;
+        this.description = description;
+        this.releaseYear = releaseYear;
+        this.genre = genre;
         this.duration = duration;
+        this.currentPrice = currentPrice;
     }
 
     public Long getId() {
         return id;
     }
-    
+
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public String getTitle() {
         return title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
-    
-    public String getGender() {
-        return gender;
+
+    public String getDescription() {
+        return description;
     }
-    
-    public void setGender(String gender) {
-        this.gender = gender;
+
+    public void setDescription(String description) {
+        this.description = description;
     }
-    
-    public String getDirector() {
-        return director;
+
+    public Integer getReleaseYear() {
+        return releaseYear;
     }
-    
-    public void setDirector(String director) {
-        this.director = director;
+
+    public void setReleaseYear(Integer releaseYear) {
+        this.releaseYear = releaseYear;
     }
-    
-    public int getDuration() {
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public Integer getDuration() {
         return duration;
     }
-    
-    public void setDuration(int duration) {
+
+    public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    public Double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    public void setCurrentPrice(Double currentPrice) {
+        this.currentPrice = currentPrice;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(director, duration, gender, id, title);
+        return Objects.hash(currentPrice, description, duration, genre, id, releaseYear, title);
     }
 
     @Override
@@ -82,8 +103,9 @@ public class Film {
         if (getClass() != obj.getClass())
             return false;
         Film other = (Film) obj;
-        return Objects.equals(director, other.director) && duration == other.duration
-                && Objects.equals(gender, other.gender) && Objects.equals(id, other.id)
+        return Objects.equals(currentPrice, other.currentPrice) && Objects.equals(description, other.description)
+                && Objects.equals(duration, other.duration) && Objects.equals(genre, other.genre)
+                && Objects.equals(id, other.id) && Objects.equals(releaseYear, other.releaseYear)
                 && Objects.equals(title, other.title);
     }
     
