@@ -1,4 +1,4 @@
-package com.vitorbionic.services.postgres;
+package com.vitorbionic.services.postgres.warehouse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +11,11 @@ import com.vitorbionic.data.dto.RentalDTO;
 import com.vitorbionic.exceptions.RequiredObjectIsNullException;
 import com.vitorbionic.exceptions.ResourceNotFoundException;
 import com.vitorbionic.model.postgres.warehouse.Rental;
-import com.vitorbionic.repository.postgres.ClientRepository;
-import com.vitorbionic.repository.postgres.FilmRepository;
-import com.vitorbionic.repository.postgres.RentalRepository;
-import com.vitorbionic.repository.postgres.StoreRepository;
-import com.vitorbionic.repository.postgres.TimeRepository;
+import com.vitorbionic.repository.postgres.warehouse.ClientRepository;
+import com.vitorbionic.repository.postgres.warehouse.FilmRepository;
+import com.vitorbionic.repository.postgres.warehouse.RentalRepository;
+import com.vitorbionic.repository.postgres.warehouse.StoreRepository;
+import com.vitorbionic.repository.postgres.warehouse.TimeRepository;
 
 @Service
 public class RentalService {

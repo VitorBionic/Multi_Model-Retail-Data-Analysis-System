@@ -13,35 +13,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.data.dto.RentalDTO;
-import com.vitorbionic.services.postgres.warehouse.RentalService;
-
+import com.vitorbionic.model.postgres.warehouse.Time;
+import com.vitorbionic.services.postgres.warehouse.TimeService;
 
 @RestController
-@RequestMapping(value = "/api/dw/fact/rental")
-public class RentalController {
+@RequestMapping(value = "/api/dw/dim/time")
+public class TimeController {
 
     @Autowired
-    private RentalService service;
-    
+    private TimeService service;
+
     @GetMapping
-    public List<RentalDTO> findAll() {
+    public List<Time> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public RentalDTO findById(@PathVariable Long id) {
+    public Time findById(@PathVariable Long id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public RentalDTO create(@RequestBody RentalDTO rental) {
-        return service.create(rental);
+    public Time create(@RequestBody Time time) {
+        return service.create(time);
     }
     
     @PutMapping
-    public RentalDTO update(@RequestBody RentalDTO rental) {
-        return service.update(rental);
+    public Time update(@RequestBody Time time) {
+        return service.update(time);
     }
     
     @DeleteMapping(value = "/{id}")

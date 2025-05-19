@@ -1,4 +1,4 @@
-package com.vitorbionic.repository.postgres;
+package com.vitorbionic.repository.postgres.warehouse;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
