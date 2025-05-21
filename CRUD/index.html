@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD - Warehouse e Temporal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Protótipo CRUD</h1>
+
+  <section>
+    <h2>Clientes</h2> <!--(Warehouse)-->
+    <button onclick="carregarClientes()">Carregar Clientes</button>
+    <table id="tabelaClientes">
+      <thead>
+        <tr><th>ID</th><th>Nome</th><th>Email</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Estoque</h2> <!--(Temporal)-->
+    <button onclick="carregarEstoque()">Carregar Estoque</button>
+    <table id="tabelaEstoque">
+      <thead>
+        <tr><th>ID</th><th>Produto</th><th>Quantidade</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
