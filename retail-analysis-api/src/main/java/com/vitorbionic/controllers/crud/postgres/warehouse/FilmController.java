@@ -1,4 +1,4 @@
-package com.vitorbionic.controllers.crud.postgres;
+package com.vitorbionic.controllers.crud.postgres.warehouse;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.model.postgres.warehouse.Store;
-import com.vitorbionic.services.postgres.warehouse.StoreService;
+import com.vitorbionic.model.postgres.warehouse.Film;
+import com.vitorbionic.services.postgres.warehouse.FilmService;
 
 @RestController
-@RequestMapping(value = "/api/dw/dim/store")
-public class StoreController {
+@RequestMapping(value = "/api/dw/dim/film")
+public class FilmController {
 
     @Autowired
-    private StoreService service;
+    private FilmService service;
 
     @GetMapping
-    public List<Store> findAll() {
+    public List<Film> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public Store findById(@PathVariable Long id) {
+    public Film findById(@PathVariable Long id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public Store create(@RequestBody Store store) {
-        return service.create(store);
+    public Film create(@RequestBody Film film) {
+        return service.create(film);
     }
     
     @PutMapping
-    public Store update(@RequestBody Store store) {
-        return service.update(store);
+    public Film update(@RequestBody Film film) {
+        return service.update(film);
     }
     
     @DeleteMapping(value = "/{id}")

@@ -1,4 +1,4 @@
-package com.vitorbionic.controllers.crud.postgres;
+package com.vitorbionic.controllers.crud.postgres.temporal;
 
 import java.util.List;
 
@@ -13,34 +13,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.data.dto.RentalDTO;
-import com.vitorbionic.services.postgres.warehouse.RentalService;
-
+import com.vitorbionic.data.dto.StockDTO;
+import com.vitorbionic.services.postgres.temporal.StockService;
 
 @RestController
-@RequestMapping(value = "/api/dw/fact/rental")
-public class RentalController {
+@RequestMapping(value = "/api/temporal/stock")
+public class StockController {
 
     @Autowired
-    private RentalService service;
+    private StockService service;
     
     @GetMapping
-    public List<RentalDTO> findAll() {
+    public List<StockDTO> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public RentalDTO findById(@PathVariable Long id) {
+    public StockDTO findById(@PathVariable Long id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public RentalDTO create(@RequestBody RentalDTO rental) {
+    public StockDTO create(@RequestBody StockDTO rental) {
         return service.create(rental);
     }
     
     @PutMapping
-    public RentalDTO update(@RequestBody RentalDTO rental) {
+    public StockDTO update(@RequestBody StockDTO rental) {
         return service.update(rental);
     }
     

@@ -1,4 +1,4 @@
-package com.vitorbionic.controllers.crud.postgres;
+package com.vitorbionic.controllers.crud.postgres.warehouse;
 
 import java.util.List;
 
