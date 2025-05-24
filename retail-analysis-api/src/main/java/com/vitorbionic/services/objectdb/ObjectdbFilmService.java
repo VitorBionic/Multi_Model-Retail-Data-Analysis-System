@@ -9,15 +9,15 @@ import org.springframework.stereotype.Service;
 import com.vitorbionic.exceptions.RequiredObjectIsNullException;
 import com.vitorbionic.exceptions.ResourceNotFoundException;
 import com.vitorbionic.model.objectdb.Film;
-import com.vitorbionic.repository.objectdb.FilmRepository;
+import com.vitorbionic.repository.objectdb.ObjectdbFilmRepository;
 
 @Service
-public class FilmService {
+public class ObjectdbFilmService {
     
     @Autowired
-    private FilmRepository repository;
+    private ObjectdbFilmRepository repository;
     
-    private Logger logger = Logger.getLogger(FilmService.class.getName());
+    private static final Logger logger = Logger.getLogger(ObjectdbFilmService.class.getName());
     
     public List<Film> findAll() {
         

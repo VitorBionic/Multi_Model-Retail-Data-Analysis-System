@@ -17,7 +17,7 @@ public class StoreService {
     @Autowired
     private StoreRepository repository;
     
-    private Logger logger = Logger.getLogger(StoreService.class.getName());
+    private static final Logger logger = Logger.getLogger(StoreService.class.getName());
     
     public List<Store> findAll() {
         

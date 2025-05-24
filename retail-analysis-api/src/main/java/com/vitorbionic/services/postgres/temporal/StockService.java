@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.vitorbionic.data.dto.StockDTO;
 import com.vitorbionic.exceptions.RequiredObjectIsNullException;
@@ -13,6 +14,7 @@ import com.vitorbionic.model.postgres.temporal.Stock;
 import com.vitorbionic.repository.postgres.temporal.StockRepository;
 import com.vitorbionic.repository.postgres.warehouse.FilmRepository;
 
+@Service
 public class StockService {
 
     @Autowired
@@ -21,7 +23,7 @@ public class StockService {
     @Autowired
     private FilmRepository filmRepository;
 
-    private Logger logger = Logger.getLogger(StockService.class.getName());
+    private static final Logger logger = Logger.getLogger(StockService.class.getName());
 
     public List<StockDTO> findAll() {
 

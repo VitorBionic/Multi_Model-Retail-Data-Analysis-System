@@ -1,4 +1,4 @@
-package com.vitorbionic.controllers.crud.postgres.temporal;
+package com.vitorbionic.controllers.crud.mongo;
 
 import java.util.List;
 
@@ -13,38 +13,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.data.dto.PriceDTO;
-import com.vitorbionic.services.postgres.temporal.PriceService;
+import com.vitorbionic.model.mongo.FilmImage;
+import com.vitorbionic.services.mongo.FilmImageService;
 
 @RestController
-@RequestMapping(value = "/api/temporal/price")
-public class PriceController {
-
+@RequestMapping(value = "/api/mongo/filmImage")
+public class FilmImageController {
+    
     @Autowired
-    private PriceService service;
+    private FilmImageService service;
     
     @GetMapping
-    public List<PriceDTO> findAll() {
+    public List<FilmImage> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public PriceDTO findById(@PathVariable Long id) {
+    public FilmImage findById(@PathVariable String id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public PriceDTO create(@RequestBody PriceDTO price) {
-        return service.create(price);
+    public FilmImage create(@RequestBody FilmImage filmImage) {
+        return service.create(filmImage);
     }
     
     @PutMapping
-    public PriceDTO update(@RequestBody PriceDTO price) {
-        return service.update(price);
+    public FilmImage update(@RequestBody FilmImage filmImage) {
+        return service.update(filmImage);
     }
     
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

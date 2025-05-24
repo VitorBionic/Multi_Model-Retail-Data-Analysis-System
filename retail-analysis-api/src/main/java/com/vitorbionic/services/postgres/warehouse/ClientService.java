@@ -17,7 +17,7 @@ public class ClientService {
     @Autowired
     private ClientRepository repository;
     
-    private Logger logger = Logger.getLogger(ClientService.class.getName());
+    private static final Logger logger = Logger.getLogger(ClientService.class.getName());
     
     public List<Client> findAll() {
         

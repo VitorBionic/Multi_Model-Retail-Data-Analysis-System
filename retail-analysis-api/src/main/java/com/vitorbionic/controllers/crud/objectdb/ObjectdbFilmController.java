@@ -1,4 +1,4 @@
-package com.vitorbionic.controllers.crud.postgres.temporal;
+package com.vitorbionic.controllers.crud.objectdb;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.data.dto.PriceDTO;
-import com.vitorbionic.services.postgres.temporal.PriceService;
+import com.vitorbionic.model.objectdb.Film;
+import com.vitorbionic.services.objectdb.ObjectdbFilmService;
 
 @RestController
-@RequestMapping(value = "/api/temporal/price")
-public class PriceController {
-
-    @Autowired
-    private PriceService service;
+@RequestMapping("/api/odb/film")
+public class ObjectdbFilmController {
     
+    @Autowired
+    private ObjectdbFilmService service;
+
     @GetMapping
-    public List<PriceDTO> findAll() {
+    public List<Film> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public PriceDTO findById(@PathVariable Long id) {
+    public Film findById(@PathVariable Long id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public PriceDTO create(@RequestBody PriceDTO price) {
-        return service.create(price);
+    public Film create(@RequestBody Film film) {
+        return service.create(film);
     }
     
     @PutMapping
-    public PriceDTO update(@RequestBody PriceDTO price) {
-        return service.update(price);
+    public Film update(@RequestBody Film film) {
+        return service.update(film);
     }
     
     @DeleteMapping(value = "/{id}")

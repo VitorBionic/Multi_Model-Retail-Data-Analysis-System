@@ -28,7 +28,7 @@ public class ObjectDbConfig {
         em.setPackagesToScan("com.vitorbionic.model.objectdb");
 
         Map<String, Object> properties = new HashMap<>();
-        properties.put("jakarta.persistence.jdbc.url", "objectdb://107.22.11.170/mydb.odb");
+        properties.put("jakarta.persistence.jdbc.url", "objectdb://localhost:6136/mydb.odb");
         properties.put("jakarta.persistence.jdbc.user", "admin");
         properties.put("jakarta.persistence.jdbc.password", "admin");
 

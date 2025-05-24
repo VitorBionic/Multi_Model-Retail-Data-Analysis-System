@@ -17,7 +17,7 @@ public class TimeService {
     @Autowired
     private TimeRepository repository;
     
-    private Logger logger = Logger.getLogger(TimeService.class.getName());
+    private static final Logger logger = Logger.getLogger(TimeService.class.getName());
     
     public List<Time> findAll() {
         

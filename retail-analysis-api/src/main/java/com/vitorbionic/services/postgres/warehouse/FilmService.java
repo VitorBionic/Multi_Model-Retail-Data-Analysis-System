@@ -17,7 +17,7 @@ public class FilmService {
     @Autowired
     private FilmRepository repository;
     
-    private Logger logger = Logger.getLogger(FilmService.class.getName());
+    private static final Logger logger = Logger.getLogger(FilmService.class.getName());
     
     public List<Film> findAll() {
         

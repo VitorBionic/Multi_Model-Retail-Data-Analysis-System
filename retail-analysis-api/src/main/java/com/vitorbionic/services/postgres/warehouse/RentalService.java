@@ -35,7 +35,7 @@ public class RentalService {
     @Autowired
     private StoreRepository storeRepository;
     
-    private Logger logger = Logger.getLogger(RentalService.class.getName());
+    private static final Logger logger = Logger.getLogger(RentalService.class.getName());
     
     public List<RentalDTO> findAll() {
         

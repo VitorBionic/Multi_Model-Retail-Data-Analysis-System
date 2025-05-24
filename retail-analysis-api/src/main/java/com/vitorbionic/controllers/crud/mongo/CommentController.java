@@ -1,4 +1,4 @@
-package com.vitorbionic.controllers.crud.objectdb;
+package com.vitorbionic.controllers.crud.mongo;
 
 import java.util.List;
 
@@ -13,38 +13,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.model.objectdb.Film;
-import com.vitorbionic.services.objectdb.FilmService;
+import com.vitorbionic.model.mongo.Comment;
+import com.vitorbionic.services.mongo.CommentService;
 
 @RestController
-@RequestMapping("/api/odb/film")
-public class FilmController {
+@RequestMapping(value = "/api/mongo/comment")
+public class CommentController {
     
     @Autowired
-    private FilmService service;
-
+    private CommentService service;
+    
     @GetMapping
-    public List<Film> findAll() {
+    public List<Comment> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public Film findById(@PathVariable Long id) {
+    public Comment findById(@PathVariable String id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public Film create(@RequestBody Film film) {
-        return service.create(film);
+    public Comment create(@RequestBody Comment comment) {
+        return service.create(comment);
     }
     
     @PutMapping
-    public Film update(@RequestBody Film film) {
-        return service.update(film);
+    public Comment update(@RequestBody Comment comment) {
+        return service.update(comment);
     }
     
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

@@ -34,13 +34,13 @@ public class StockController {
     }
     
     @PostMapping
-    public StockDTO create(@RequestBody StockDTO rental) {
-        return service.create(rental);
+    public StockDTO create(@RequestBody StockDTO stock) {
+        return service.create(stock);
     }
     
     @PutMapping
-    public StockDTO update(@RequestBody StockDTO rental) {
-        return service.update(rental);
+    public StockDTO update(@RequestBody StockDTO stock) {
+        return service.update(stock);
     }
     
     @DeleteMapping(value = "/{id}")

@@ -7,6 +7,6 @@ import com.vitorbionic.model.objectdb.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface FilmRepository extends JpaRepository<Film, Long> {
+public interface ObjectdbFilmRepository extends JpaRepository<Film, Long> {
     
 }
