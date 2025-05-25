@@ -1,6 +1,11 @@
 let tabela3 = document.querySelector("#tabelaEstoque thead")
 let tabela2 = document.querySelector("#tabelaPreco thead")
-let tabela = document.querySelector("#tabelaClientes thead") 
+let tabela = document.querySelector("#tabelaFilmes thead") 
+
+
+
+
+
 fetch("https://quetzal-novel-man.ngrok-free.app/api/odb/film", {
     headers: {
     "ngrok-skip-browser-warning": "skip",
@@ -39,15 +44,6 @@ fetch("https://quetzal-novel-man.ngrok-free.app/api/odb/film", {
         console.log("Error na requisição:", error);
     });
 
-
-
-
-
-
-
-
-
-
     fetch("https://quetzal-novel-man.ngrok-free.app/api/temporal/price", {
     headers: {
     "ngrok-skip-browser-warning": "skip",
@@ -80,9 +76,6 @@ fetch("https://quetzal-novel-man.ngrok-free.app/api/odb/film", {
         console.log("Error na requisição:", error);
     });
 
-
-
-
     fetch("https://quetzal-novel-man.ngrok-free.app/api/temporal/stock", {
     headers: {
     "ngrok-skip-browser-warning": "skip",
@@ -114,3 +107,12 @@ fetch("https://quetzal-novel-man.ngrok-free.app/api/odb/film", {
     .catch(error => {
         console.log("Error na requisição:", error);
     });
+
+
+
+
+
+
+
+
+

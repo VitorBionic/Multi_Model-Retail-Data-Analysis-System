@@ -10,7 +10,7 @@
 
   <section>
     <h2>FIlmes</h2> <!--(Warehouse)-->
-    <table id="tabelaClientes">
+    <table id="tabelaFilmes">
       <thead>
         <tr><th>ID</th><th>titulo</th><th>descrição</th><th>data de lançamento</th><th>genero</th><th>duração</th><th>preço atual</th></tr>
       </thead>
@@ -39,8 +39,80 @@
       <tbody></tbody>
     </table>
   </section>
+  
+  <h1>data warehouse</h1>
+
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>Cliente</h2>
+       <table id="tabelaWareClientes">
+      <thead>
+        <tr><th>ID</th><th>Nome</th><th>Email</th><th>Cidade</th><th>Estado</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Filme</h2> 
+    <table id="tabelaWareFilmes">
+      <thead>
+        <tr><th>ID</th><th>Titulo</th><th>Genero</th><th>Duração</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+<h2>Loja</h2>
+       <table id="tabelaWareLoja">
+      <thead>
+        <tr><th>ID</th><th>Nome</th><th>Cidade</th><th>Estado</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+<h2>Tempo</h2>
+       <table id="tabelaWareTempo">
+      <thead>
+        <tr><th>ID</th><th>Ano</th><th>Mês</th><th>Dia</th><th>Data</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Locação</h2>
+       <table id="tabelaWareLocacao">
+      <thead>
+        <tr><th>ID</th><th>Id do Tempo</th><th>Id do Filme</th><th>Id do Cliente</th><th>Id da Loja</th><th>Valor do Pagamento</th><th>quantidade</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
 
   <script src="scripts.js"></script>
   <script src="insert.js"></script>
+  <script src="script2.js "></script>
 </body>
 </html>
