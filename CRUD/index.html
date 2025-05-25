@@ -9,27 +9,38 @@
   <h1>Protótipo CRUD</h1>
 
   <section>
-    <h2>Clientes</h2> <!--(Warehouse)-->
-    <button onclick="carregarClientes()">Carregar Clientes</button>
+    <h2>FIlmes</h2> <!--(Warehouse)-->
     <table id="tabelaClientes">
       <thead>
-        <tr><th>ID</th><th>Nome</th><th>Email</th></tr>
+        <tr><th>ID</th><th>titulo</th><th>descrição</th><th>data de lançamento</th><th>genero</th><th>duração</th><th>preço atual</th></tr>
       </thead>
       <tbody></tbody>
     </table>
   </section>
 
   <section>
-    <h2>Estoque</h2> <!--(Temporal)-->
-    <button onclick="carregarEstoque()">Carregar Estoque</button>
-    <table id="tabelaEstoque">
+    <h1>Temporal</h1>
+
+    <hr>
+
+    <h2>estoque</h2>
+       <table id="tabelaEstoque">
       <thead>
-        <tr><th>ID</th><th>Produto</th><th>Quantidade</th></tr>
+        <tr><th>ID</th><th>Id do Filme</th><th>Quantidade</th><th>Inicio da Validade</th><th>Final da Validade</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Preço</h2> 
+    <table id="tabelaPreco">
+      <thead>
+        <tr><th>ID</th><th>Id do Filme</th><th>Preço</th><th>Inicio da Validade</th><th>Final da Validade</th></tr>
       </thead>
       <tbody></tbody>
     </table>
   </section>
 
   <script src="scripts.js"></script>
+  <script src="insert.js"></script>
 </body>
 </html>
