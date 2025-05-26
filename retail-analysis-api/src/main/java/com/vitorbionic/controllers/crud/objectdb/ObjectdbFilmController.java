@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vitorbionic.model.objectdb.Film;
+import com.vitorbionic.data.dto.FilmDTO;
 import com.vitorbionic.services.objectdb.ObjectdbFilmService;
 
 @RestController
@@ -24,22 +24,22 @@ public class ObjectdbFilmController {
     private ObjectdbFilmService service;
 
     @GetMapping
-    public List<Film> findAll() {
+    public List<FilmDTO> findAll() {
         return service.findAll();
     }
     
     @GetMapping(value = "/{id}")
-    public Film findById(@PathVariable Long id) {
+    public FilmDTO findById(@PathVariable Long id) {
         return service.findById(id);
     }
     
     @PostMapping
-    public Film create(@RequestBody Film film) {
+    public FilmDTO create(@RequestBody FilmDTO film) {
         return service.create(film);
     }
     
     @PutMapping
-    public Film update(@RequestBody Film film) {
+    public FilmDTO update(@RequestBody FilmDTO film) {
         return service.update(film);
     }
     

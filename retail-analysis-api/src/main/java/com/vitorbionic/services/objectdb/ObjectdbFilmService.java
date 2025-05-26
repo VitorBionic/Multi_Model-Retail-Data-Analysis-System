@@ -1,11 +1,14 @@
 package com.vitorbionic.services.objectdb;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.vitorbionic.data.dto.FilmDTO;
 import com.vitorbionic.exceptions.RequiredObjectIsNullException;
 import com.vitorbionic.exceptions.ResourceNotFoundException;
 import com.vitorbionic.model.objectdb.Film;
@@ -19,54 +22,109 @@ public class ObjectdbFilmService {
     
     private static final Logger logger = Logger.getLogger(ObjectdbFilmService.class.getName());
     
-    public List<Film> findAll() {
+    public List<FilmDTO> findAll() {
         
         logger.info("Finding all films!");
         
-        return repository.findAll();
+        List<Film> entities = repository.findAll();
+        
+        List<FilmDTO> dtos = new ArrayList<>();
+        for (Film entity : entities) {
+            dtos.add(new FilmDTO(
+                    entity.getId(),
+                    entity.getTitle(),
+                    entity.getDescription(),
+                    entity.getReleaseYear(),
+                    entity.getGenre(),
+                    entity.getDuration(),
+                    entity.getCurrentPrice())
+            );
+        }
+        
+        return dtos;
     }
     
-    public Film findById(Long id) {
+    public FilmDTO findById(Long id) {
         
         logger.info("Finding one film!");
         
-        Film film = repository.findById(id)
+        Film entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
         
-        return film;
+        return new FilmDTO(
+                entity.getId(),
+                entity.getTitle(),
+                entity.getDescription(),
+                entity.getReleaseYear(),
+                entity.getGenre(),
+                entity.getDuration(),
+                entity.getCurrentPrice()
+                );
     }
     
-    public Film create(Film film) {
-        if (film == null) {
+    public FilmDTO create(FilmDTO dto) {
+        if (dto == null) {
             throw new RequiredObjectIsNullException();
         }
-        film.setId(null);
         
         logger.info("Creating one film!");
         
-        return repository.save(film);
+        Film entity = repository.save(new Film(
+                null,
+                dto.title(),
+                dto.description(),
+                dto.releaseYear(),
+                dto.genre(),
+                dto.duration(),
+                dto.currentPrice()
+                ));
+        
+        return new FilmDTO(
+                entity.getId(),
+                entity.getTitle(),
+                entity.getDescription(),
+                entity.getReleaseYear(),
+                entity.getGenre(),
+                entity.getDuration(),
+                entity.getCurrentPrice()
+                );
     }
     
-    public Film update(Film film) {
-        if (film == null) {
+    @Transactional("objectdbTransactionManager")
+    public FilmDTO update(FilmDTO dto) {
+        if (dto == null) {
             throw new RequiredObjectIsNullException();
         }
         
         logger.info("Updating one film!");
         
-        Film persistedFilm = repository.findById(film.getId())
+        Film persistedFilm = repository.findById(dto.id())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
         
-        persistedFilm.setTitle(film.getTitle());
-        persistedFilm.setDescription(film.getDescription());
-        persistedFilm.setReleaseYear(film.getReleaseYear());
-        persistedFilm.setGenre(film.getGenre());
-        persistedFilm.setDuration(film.getDuration());
-        persistedFilm.setCurrentPrice(film.getCurrentPrice());
+        persistedFilm.setTitle(dto.title());
+        persistedFilm.setDescription(dto.description());
+        persistedFilm.setReleaseYear(dto.releaseYear());
+        persistedFilm.setGenre(dto.genre());
+        persistedFilm.setDuration(dto.duration());
+        persistedFilm.setCurrentPrice(dto.currentPrice());
         
-        return repository.save(persistedFilm);
+        logger.info("DTO hash: {" + System.identityHashCode(dto) + "}");
+        logger.info("Persisted hash: {" + System.identityHashCode(persistedFilm) + "}");
+        
+        Film updatedFilm = repository.save(persistedFilm);
+        
+        return new FilmDTO(
+                updatedFilm.getId(),
+                updatedFilm.getTitle(),
+                updatedFilm.getDescription(),
+                updatedFilm.getReleaseYear(),
+                updatedFilm.getGenre(),
+                updatedFilm.getDuration(),
+                updatedFilm.getCurrentPrice()
+                );
     }
     
+    @Transactional("objectdbTransactionManager")
     public void delete(Long id) {
         
         logger.info("Deleting one film!");
