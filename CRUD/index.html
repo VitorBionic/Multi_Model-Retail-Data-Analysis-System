@@ -2,20 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>CRUD - Warehouse e Temporal</title>
+  <title>Warehouse e Temporal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Protótipo CRUD</h1>
+  <h1>Análise de Dados</h1>
 
   <section>
-    <h2>FIlmes</h2> <!--(Warehouse)-->
+    <h2>Filmes</h2> 
+
     <table id="tabelaFilmes">
       <thead>
-        <tr><th>ID</th><th>titulo</th><th>descrição</th><th>data de lançamento</th><th>genero</th><th>duração</th><th>preço atual</th></tr>
+        <tr><th>ID</th><th>Título</th><th>Descrição</th><th>Data de Lançamento</th><th>Gênero</th><th>Duração</th><th>Preço Atual</th></tr>
       </thead>
       <tbody></tbody>
     </table>
+
   </section>
 
   <section>
@@ -23,13 +25,14 @@
 
     <hr>
 
-    <h2>estoque</h2>
+    <h2>Estoque</h2>
        <table id="tabelaEstoque">
       <thead>
         <tr><th>ID</th><th>Id do Filme</th><th>Quantidade</th><th>Inicio da Validade</th><th>Final da Validade</th></tr>
       </thead>
       <tbody></tbody>
     </table>
+
 
     <h2>Preço</h2> 
     <table id="tabelaPreco">
@@ -38,24 +41,14 @@
       </thead>
       <tbody></tbody>
     </table>
+
+
   </section>
   
-  <h1>data warehouse</h1>
-
-    <hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="data-warehouse">
+  <h1>Data Warehouse</h1>
+  <hr>
+</div>
 
     <h2>Cliente</h2>
        <table id="tabelaWareClientes">
@@ -68,7 +61,7 @@
     <h2>Filme</h2> 
     <table id="tabelaWareFilmes">
       <thead>
-        <tr><th>ID</th><th>Titulo</th><th>Genero</th><th>Duração</th></tr>
+        <tr><th>ID</th><th>Título</th><th>Gênero</th><th>Duração</th></tr>
       </thead>
       <tbody></tbody>
     </table>
@@ -97,20 +90,7 @@
       <tbody></tbody>
     </table>
 
-
-
-
-
-
-
-
-
-
-
-
   </section>
-
-
   <script src="scripts.js"></script>
   <script src="insert.js"></script>
   <script src="script2.js "></script>
