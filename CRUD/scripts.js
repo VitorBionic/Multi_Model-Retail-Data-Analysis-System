@@ -3,9 +3,6 @@ let tabela2 = document.querySelector("#tabelaPreco thead")
 let tabela = document.querySelector("#tabelaFilmes thead") 
 
 
-
-
-
 fetch("https://quetzal-novel-man.ngrok-free.app/api/odb/film", {
     headers: {
     "ngrok-skip-browser-warning": "skip",
