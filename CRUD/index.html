@@ -17,7 +17,6 @@
       </thead>
       <tbody></tbody>
     </table>
-
   </section>
 
   <section>
@@ -33,7 +32,6 @@
       <tbody></tbody>
     </table>
 
-
     <h2>Preço</h2> 
     <table id="tabelaPreco">
       <thead>
@@ -41,8 +39,6 @@
       </thead>
       <tbody></tbody>
     </table>
-
-
   </section>
   
 <div class="data-warehouse">
@@ -108,7 +104,39 @@
       <tbody></tbody>
     </table>
 
-    <h1>Olap</h1>
+  <section id="dashboardKpis">
+    <h1>Dashboard</h1>
+
+    <div class="kpi-cards">
+      <div class="kpi-card">
+        <h3>Total de Filmes</h3>
+        <p id="kpiTotalFilmes">0</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Média de Duração</h3>
+        <p id="kpiMediaDuracao">0 min</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Preço Médio</h3>
+        <p id="kpiPrecoMedio">R$ 0,00</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Filme Mais Recente</h3>
+        <p id="kpiFilmeRecente">-</p>
+      </div>
+    </div>
+
+    <h2>Relatórios Analíticos</h2>
+    <table id="relatorioPorGenero">
+      <thead>
+        <tr><th>Gênero</th><th>Quantidade de Filmes</th><th>Duração Média (min)</th><th>Preço Médio (R$)</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </section>
+
+     <h1>Olap</h1>
 
     <h2>Drilldown para Filmes</h2>
        <table id="tabelaDrilldownFilmes">
@@ -142,11 +170,12 @@
 <tbody></tbody>
 </table>
 
-  </section>
+    </section>
   <script src="scripts.js"></script>
   <script src="insert.js"></script>
+  <script src="dashboard.js"></script>  
   <script src="script2.js"></script>
   <script src="script3.js"></script>
-  <script src="script4.js"></script>
+  <script src="script4.js"></script>    
 </body>
 </html>
