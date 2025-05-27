@@ -1,4 +1,4 @@
-async function loadFilms() {
+async function loadRentals() {
     const table = document.querySelector("table")
 
     try {
@@ -10,11 +10,11 @@ async function loadFilms() {
 
         const data = await response.json();
 
-        console.log("FILMS FOUND:");
+        console.log("RENTALS FOUND:");
         console.log(data);
 
-        for (let film of data) {
-            createRegistry(film);
+        for (let rental of data) {
+            createRegistry(rental);
         }
 
     } catch (error) {
@@ -69,7 +69,7 @@ async function loadFilms() {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(`FILM WITH ID ${id} DELETED`)
+                        console.log(`RENTAL WITH ID ${id} DELETED`)
                         console.log(data)
                     })
                     .catch(error => {
@@ -91,23 +91,23 @@ async function loadFilms() {
             const tr = btn.parentElement.parentElement
 
             switch (btn.parentElement.className) {
-                case "title":
-                    constructFieldChange(tr, "title", "título", "text", "80")
+                case "timeId":
+                    constructFieldChange(tr, "timeId", "id do tempo", "number")
                     break;
-                case "description":
-                    constructFieldChange(tr, "description", "descrição", "text", "150")
+                case "filmId":
+                    constructFieldChange(tr, "filmId", "id do filme", "number")
                     break;
-                case "releaseYear":
-                    constructFieldChange(tr, "releaseYear", "data de lançamento", "number", "4")
+                case "clientId":
+                    constructFieldChange(tr, "clientId", "id do cliente", "number")
                     break;
-                case "genre":
-                    constructFieldChange(tr, "genre", "Gênero", "text")
+                case "storeId":
+                    constructFieldChange(tr, "storeId", "id da loja", "number")
                     break;
-                case "duration":
-                    constructFieldChange(tr, "duration", "duração(min)", "number")
+                case "paidValue":
+                    constructFieldChange(tr, "paidValue", "valor pago", "number", null, null, "0.01")
                     break;
-                case "currentPrice":
-                    constructFieldChange(tr, "currentPrice", "preço atual", "number", null, null, "0.01")
+                case "quantity":
+                    constructFieldChange(tr, "quantity", "quantidade", "number")
                     break;
             }
         })
@@ -219,111 +219,108 @@ async function loadFilms() {
         textNode = document.createTextNode("Adicionar Novo Registro")
         overlay.querySelector("h1").appendChild(textNode)
 
-        const liTitle = document.createElement("li")
-        const labelTitle = document.createElement("label")
-        labelTitle.setAttribute("for", "inTitle")
-        const textTitle = document.createTextNode("Título:")
-        labelTitle.appendChild(textTitle)
-        liTitle.appendChild(labelTitle)
-        const brTitle = document.createElement("br")
-        liTitle.appendChild(brTitle)
-        const inputTitle = document.createElement("input")
-        inputTitle.setAttribute("type", "text")
-        inputTitle.setAttribute("id", "inTitle")
-        inputTitle.setAttribute("maxlength", "80")
-        inputTitle.setAttribute("placeholder", "Digite o título")
-        inputTitle.setAttribute("required", "")
-        liTitle.appendChild(inputTitle)
-        constructedElements.push(liTitle)
-        ul.appendChild(liTitle)
+        const liTimeId = document.createElement("li")
+        const labelTimeId = document.createElement("label")
+        labelTimeId.setAttribute("for", "inTimeId")
+        const textTimeId = document.createTextNode("Id do registro do tempo:")
+        labelTimeId.appendChild(textTimeId)
+        liTimeId.appendChild(labelTimeId)
+        const brTimeId = document.createElement("br")
+        liTimeId.appendChild(brTimeId)
+        const inputTimeId = document.createElement("input")
+        inputTimeId.setAttribute("type", "number")
+        inputTimeId.setAttribute("id", "inTimeId")
+        inputTimeId.setAttribute("placeholder", "Digite o id do tempo")
+        inputTimeId.setAttribute("required", "")
+        liTimeId.appendChild(inputTimeId)
+        constructedElements.push(liTimeId)
+        ul.appendChild(liTimeId)
 
-        const liDescription = document.createElement("li")
-        const labelDescription = document.createElement("label")
-        labelDescription.setAttribute("for", "inDescription")
-        const textDescription = document.createTextNode("Descrição:")
-        labelDescription.appendChild(textDescription)
-        liDescription.appendChild(labelDescription)
-        const brDescription = document.createElement("br")
-        liDescription.appendChild(brDescription)
-        const inputDescription = document.createElement("input")
-        inputDescription.setAttribute("type", "text")
-        inputDescription.setAttribute("id", "inDescription")
-        inputDescription.setAttribute("maxlength", "150")
-        inputDescription.setAttribute("placeholder", "Digite a descrição")
-        inputDescription.setAttribute("required", "")
-        liDescription.appendChild(inputDescription)
-        constructedElements.push(liDescription)
-        ul.appendChild(liDescription)
+        const liFilmId = document.createElement("li")
+        const labelFilmId = document.createElement("label")
+        labelFilmId.setAttribute("for", "inFilmId")
+        const textFilmId = document.createTextNode("Id do registro do filme:")
+        labelFilmId.appendChild(textFilmId)
+        liFilmId.appendChild(labelFilmId)
+        const brFilmId = document.createElement("br")
+        liFilmId.appendChild(brFilmId)
+        const inputFilmId = document.createElement("input")
+        inputFilmId.setAttribute("type", "number")
+        inputFilmId.setAttribute("id", "inFilmId")
+        inputFilmId.setAttribute("placeholder", "Digite o id do filme")
+        inputFilmId.setAttribute("required", "")
+        liFilmId.appendChild(inputFilmId)
+        constructedElements.push(liFilmId)
+        ul.appendChild(liFilmId)
 
-        const liReleaseYear = document.createElement("li")
-        const labelReleaseYear = document.createElement("label")
-        labelReleaseYear.setAttribute("for", "inReleaseYear")
-        const textReleaseYear = document.createTextNode("Ano de lançamento:")
-        labelReleaseYear.appendChild(textReleaseYear)
-        liReleaseYear.appendChild(labelReleaseYear)
-        const brReleaseYear = document.createElement("br")
-        liReleaseYear.appendChild(brReleaseYear)
-        const inputReleaseYear = document.createElement("input")
-        inputReleaseYear.setAttribute("type", "number")
-        inputReleaseYear.setAttribute("id", "inReleaseYear")
-        inputReleaseYear.setAttribute("maxlength", "4")
-        inputReleaseYear.setAttribute("placeholder", "Digite o ano de lançamento")
-        inputReleaseYear.setAttribute("required", "")
-        liReleaseYear.appendChild(inputReleaseYear)
-        constructedElements.push(liReleaseYear)
-        ul.appendChild(liReleaseYear)
+        const liClientId = document.createElement("li")
+        const labelClientId = document.createElement("label")
+        labelClientId.setAttribute("for", "inClientId")
+        const textClientId = document.createTextNode("Id do registro do cliente:")
+        labelClientId.appendChild(textClientId)
+        liClientId.appendChild(labelClientId)
+        const brClientId = document.createElement("br")
+        liClientId.appendChild(brClientId)
+        const inputClientId = document.createElement("input")
+        inputClientId.setAttribute("type", "number")
+        inputClientId.setAttribute("id", "inClientId")
+        inputClientId.setAttribute("placeholder", "Digite o id do cliente")
+        inputClientId.setAttribute("required", "")
+        liClientId.appendChild(inputClientId)
+        constructedElements.push(liClientId)
+        ul.appendChild(liClientId)
 
-        const liGenre = document.createElement("li")
-        const labelGenre = document.createElement("label")
-        labelGenre.setAttribute("for", "inGenre")
-        const textGenre = document.createTextNode("Gênero:")
-        labelGenre.appendChild(textGenre)
-        liGenre.appendChild(labelGenre)
-        const brGenre = document.createElement("br")
-        liGenre.appendChild(brGenre)
-        const inputGenre = document.createElement("input")
-        inputGenre.setAttribute("type", "text")
-        inputGenre.setAttribute("id", "inGenre")
-        inputGenre.setAttribute("placeholder", "Digite o gênero")
-        inputGenre.setAttribute("required", "")
-        liGenre.appendChild(inputGenre)
-        constructedElements.push(liGenre)
-        ul.appendChild(liGenre)
+        const liStoreId = document.createElement("li")
+        const labelStoreId = document.createElement("label")
+        labelStoreId.setAttribute("for", "inStoreId")
+        const textStoreId = document.createTextNode("Id do registro da loja:")
+        labelStoreId.appendChild(textStoreId)
+        liStoreId.appendChild(labelStoreId)
+        const brStoreId = document.createElement("br")
+        liStoreId.appendChild(brStoreId)
+        const inputStoreId = document.createElement("input")
+        inputStoreId.setAttribute("type", "number")
+        inputStoreId.setAttribute("id", "inStoreId")
+        inputStoreId.setAttribute("placeholder", "Digite o id da loja")
+        inputStoreId.setAttribute("required", "")
+        liStoreId.appendChild(inputStoreId)
+        constructedElements.push(liStoreId)
+        ul.appendChild(liStoreId)
 
-        const liDuration = document.createElement("li")
-        const labelDuration = document.createElement("label")
-        labelDuration.setAttribute("for", "inDuration")
-        const textDuration = document.createTextNode("Duração(min):")
-        labelDuration.appendChild(textDuration)
-        liDuration.appendChild(labelDuration)
-        const brDuration = document.createElement("br")
-        liDuration.appendChild(brDuration)
-        const inputDuration = document.createElement("input")
-        inputDuration.setAttribute("type", "number")
-        inputDuration.setAttribute("id", "inDuration")
-        inputDuration.setAttribute("placeholder", "Digite a duração do filme(min)")
-        inputDuration.setAttribute("required", "")
-        liDuration.appendChild(inputDuration)
-        constructedElements.push(liDuration)
-        ul.appendChild(liDuration)
+        const liPaidValue = document.createElement("li")
+        const labelPaidValue = document.createElement("label")
+        labelPaidValue.setAttribute("for", "inPaidValue")
+        const textPaidValue = document.createTextNode("Valor pago:")
+        labelPaidValue.appendChild(textPaidValue)
+        liPaidValue.appendChild(labelPaidValue)
+        const brPaidValue = document.createElement("br")
+        liPaidValue.appendChild(brPaidValue)
+        const inputPaidValue = document.createElement("input")
+        inputPaidValue.setAttribute("type", "number")
+        inputPaidValue.setAttribute("step", "0.01")
+        inputPaidValue.setAttribute("id", "inPaidValue")
+        inputPaidValue.setAttribute("placeholder", "Digite o valor pago")
+        inputPaidValue.setAttribute("required", "")
+        liPaidValue.appendChild(inputPaidValue)
+        constructedElements.push(liPaidValue)
+        ul.appendChild(liPaidValue)
 
-        const liCurrentPrice = document.createElement("li")
-        const labelCurrentPrice = document.createElement("label")
-        labelCurrentPrice.setAttribute("for", "inCurrentPrice")
-        const textCurrentPrice = document.createTextNode("Preço atual:")
-        labelCurrentPrice.appendChild(textCurrentPrice)
-        liCurrentPrice.appendChild(labelCurrentPrice)
-        const brCurrentPrice = document.createElement("br")
-        liCurrentPrice.appendChild(brCurrentPrice)
-        const inputCurrentPrice = document.createElement("input")
-        inputCurrentPrice.setAttribute("type", "number")
-        inputCurrentPrice.setAttribute("step", "0.01")
-        inputCurrentPrice.setAttribute("id", "inCurrentPrice")
-        inputCurrentPrice.setAttribute("placeholder", "Digite o preço atual")
-        inputCurrentPrice.setAttribute("required", "")
-        liCurrentPrice.appendChild(inputCurrentPrice)
-        constructedElements.push(liCurrentPrice);
-        ul.appendChild(liCurrentPrice)
+        const liQuantity = document.createElement("li")
+        const labelQuantity = document.createElement("label")
+        labelQuantity.setAttribute("for", "inQuantity")
+        const textQuantity = document.createTextNode("Quantidade:")
+        labelQuantity.appendChild(textQuantity)
+        liQuantity.appendChild(labelQuantity)
+        const brQuantity = document.createElement("br")
+        liQuantity.appendChild(brQuantity)
+        const inputQuantity = document.createElement("input")
+        inputQuantity.setAttribute("type", "number")
+        inputQuantity.setAttribute("id", "inQuantity")
+        inputQuantity.setAttribute("placeholder", "Digite a quantidade")
+        inputQuantity.setAttribute("required", "")
+        liQuantity.appendChild(inputQuantity)
+        constructedElements.push(liQuantity);
+        ul.appendChild(liQuantity)
 
         const liSubmit = document.createElement("li")
         liSubmit.setAttribute("id", "submit")
@@ -347,17 +344,17 @@ async function loadFilms() {
                 "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "title": inputs[0].value,
-                    "description": inputs[1].value,
-                    "releaseYear": parseInt(inputs[2].value),
-                    "genre": inputs[3].value,
-                    "duration": parseInt(inputs[4].value),
-                    "currentPrice": parseFloat(inputs[5].value)
+                    "timeId": parseInt(inputs[0].value),
+                    "filmId": parseInt(inputs[1].value),
+                    "clientId": parseInt(inputs[2].value),
+                    "storeId": parseInt(inputs[3].value),
+                    "paidValue": parseFloat(inputs[4].value),
+                    "quantity": parseInt(inputs[5].value)
                 })
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log("FILM ENTITY CREATED:")
+                    console.log("RENTAL ENTITY CREATED:")
                     console.log(data)
                 })
                 .catch(error => {
@@ -370,7 +367,7 @@ async function loadFilms() {
         overlay.querySelector("form").addEventListener("submit", submitEventListenerFunction)
     }
 
-    function createRegistry(film) {
+    function createRegistry(rental) {
         const tableRow = document.createElement("tr")
 
         const editButton = document.createElement("button")
@@ -380,7 +377,7 @@ async function loadFilms() {
 
         const tableData1 = document.createElement("td")
         tableData1.setAttribute("class", "id")
-        const idData = document.createTextNode(film.id)
+        const idData = document.createTextNode(rental.id)
         tableData1.appendChild(idData)
         tableRow.appendChild(tableData1)
 
@@ -388,9 +385,9 @@ async function loadFilms() {
         edBt2.appendChild(editIcon.cloneNode())
 
         const tableData2 = document.createElement("td")
-        tableData2.setAttribute("class", "title")
-        const titleData = document.createTextNode(film.title)
-        tableData2.appendChild(titleData)
+        tableData2.setAttribute("class", "timeId")
+        const timeIdData = document.createTextNode(rental.timeId)
+        tableData2.appendChild(timeIdData)
         tableData2.appendChild(edBt2)
         tableRow.appendChild(tableData2)
 
@@ -398,9 +395,9 @@ async function loadFilms() {
         edBt3.appendChild(editIcon.cloneNode())
 
         const tableData3 = document.createElement("td")
-        tableData3.setAttribute("class", "description")
-        const descriptionData = document.createTextNode(film.description)
-        tableData3.appendChild(descriptionData)
+        tableData3.setAttribute("class", "filmId")
+        const filmIdData = document.createTextNode(film.filmId)
+        tableData3.appendChild(filmIdData)
         tableData3.appendChild(edBt3)
         tableRow.appendChild(tableData3)
 
@@ -408,9 +405,9 @@ async function loadFilms() {
         edBt4.appendChild(editIcon.cloneNode())
 
         const tableData4 = document.createElement("td")
-        tableData4.setAttribute("class", "releaseYear")
-        const releaseYearData = document.createTextNode(film.releaseYear)
-        tableData4.appendChild(releaseYearData)
+        tableData4.setAttribute("class", "clientId")
+        const clientIdData = document.createTextNode(film.clientId)
+        tableData4.appendChild(clientIdData)
         tableData4.appendChild(edBt4)
         tableRow.appendChild(tableData4)
 
@@ -418,9 +415,9 @@ async function loadFilms() {
         edBt5.appendChild(editIcon.cloneNode())
 
         const tableData5 = document.createElement("td")
-        tableData5.setAttribute("class", "genre")
-        const genreData = document.createTextNode(film.genre)
-        tableData5.appendChild(genreData)
+        tableData5.setAttribute("class", "storeId")
+        const storeIdData = document.createTextNode(film.storeId)
+        tableData5.appendChild(storeIdData)
         tableData5.appendChild(edBt5)
         tableRow.appendChild(tableData5)
 
@@ -428,9 +425,9 @@ async function loadFilms() {
         edBt6.appendChild(editIcon.cloneNode())
 
         const tableData6 = document.createElement("td")
-        tableData6.setAttribute("class", "duration")
-        const durationData = document.createTextNode(film.duration)
-        tableData6.appendChild(durationData)
+        tableData6.setAttribute("class", "paidValue")
+        const paidValueData = document.createTextNode(film.paidValue)
+        tableData6.appendChild(paidValueData)
         tableData6.appendChild(edBt6)
         tableRow.appendChild(tableData6)
 
@@ -438,9 +435,9 @@ async function loadFilms() {
         edBt7.appendChild(editIcon.cloneNode())
 
         const tableData7 = document.createElement("td")
-        tableData7.setAttribute("class", "currentPrice")
-        const currentPriceData = document.createTextNode(film.currentPrice)
-        tableData7.appendChild(currentPriceData)
+        tableData7.setAttribute("class", "quantity")
+        const quantityData = document.createTextNode(film.quantity)
+        tableData7.appendChild(quantityData)
         tableData7.appendChild(edBt7)
         tableRow.appendChild(tableData7)
 
@@ -459,4 +456,4 @@ async function loadFilms() {
 
 }
 
-loadFilms();
+loadRentals();

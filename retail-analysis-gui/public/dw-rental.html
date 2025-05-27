@@ -17,30 +17,23 @@
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
     <link rel="icon" type="img/png" href="../assets/img/favicon.png">
-    <title>Fake CRUD - Página Principal</title>
+    <title>Sistema de Análise de Dados - Filmes</title>
 </head>
-<body id="mainpage">
+<body class="data-presentation">
     <div class="wrapper">
         <main class="container">
             <ul>
-                <li id="profile">
-                    <button onclick="window.location.href = 'profilePage.html'"><i class="fa-regular fa-user"></i></button>
-                </li>
-                <li id="compliment">
-                    <p></p>
-                </li>
-                <hr>
-                <h1>Lista de Usuários</h1>
+                <h1>Lista de Locações</h1>
                 <li id="table">
                     <table>
                         <tr>
-                            <th>Email</th>
-                            <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>CPF</th>
-                            <th>Gênero</th>
-                            <th>Data de nascimento</th>
-                            <th>Senha</th>
+                            <th>Id</th>
+                            <th>Id do tempo</th>
+                            <th>Id do filme</th>
+                            <th>Id do cliente</th>
+                            <th>Id da loja</th>
+                            <th>Valor pago</th>
+                            <th>Quantidade</th>
                         </tr>
                     </table>
                 </li>
@@ -59,10 +52,13 @@
                 </div>
             </div>
         </main>
+        <div id="divGoBack" class="container" onclick="window.location.replace('data-warehouse.html')">
+            <button>Voltar</button>
+        </div>
     </div>
 
     <!-- Custom JS -->
-    <script src="../js/mainpageScript.js"></script>
+    <script src="../js/rentalDwScript.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>

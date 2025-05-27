@@ -73,13 +73,13 @@ body #divGoBack button:hover {
     background: rgb(175, 175, 175);
 }
 
-/* Home, ETL */
+/* Home, menu */
 
-body#home main ul, body#etl main ul {
+body#home main ul, body.menu main ul {
     align-items: center;
 }
 
-body#home main ul li, body#etl main ul li {
+body#home main ul li, body.menu main ul li {
     width: 25%;
     height: 35px;
     background: rgb(57, 56, 56);
@@ -88,7 +88,7 @@ body#home main ul li, body#etl main ul li {
     text-align: center;
 }
 
-body#home main ul li:hover, body#etl main ul li:hover {
+body#home main ul li:hover, body.menu main ul li:hover {
     background: #000000;
 }
 
