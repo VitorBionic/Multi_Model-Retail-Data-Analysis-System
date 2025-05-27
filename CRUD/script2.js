@@ -140,6 +140,9 @@ fetch("https://quetzal-novel-man.ngrok-free.app/api/dw/dim/client", {
             let tdid = document.createElement("td")
             tdid.innerText = rental.id
             linha.appendChild(tdid)
+            let tdtimeid = document.createElement("td")
+            tdtimeid.innerText = rental.timeId
+            linha.appendChild(tdtimeid)
             let tdfilmid = document.createElement("td")
             tdfilmid.innerText = rental.filmId
             linha.appendChild(tdfilmid)
