@@ -54,7 +54,7 @@ fetch("https://quetzal-novel-man.ngrok-free.app/api/odb/film", {
         }
     }
 
-    // 🔥 Chamando direto após os dados carregarem
+    
     preencherKPIs();
     gerarRelatorioPorGenero();
 })

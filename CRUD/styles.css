@@ -168,3 +168,51 @@ tr:hover td {
   background-color: #5a6b48;
   cursor: default;
 }
+
+/* 🟢 Estilo Geral para Data Mining */
+h2 {
+    color: #14532d;
+    background-color: #ecfdf5;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 6px solid #166534;
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+}
+
+table th {
+    background-color: #166534;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+table tr:nth-child(even) {
+    background-color: #f0fdf4;
+}
+
+table tr:hover {
+    background-color: #bbf7d0;
+}
+
+/* 🟩 Tabela de Anomalias */
+#tabelaAnomalias th {
+    background-color: #15803d;
+}
+
+/* 🟢 Tabela de Previsão de Vendas */
+#tabelaPrevisaoVendas th {
+    background-color: #14532d;
+}
+
