@@ -1,0 +1,160 @@
+[{
+  "_id": "2f8b3bdd-d875-4542-96ad-d6b526327e74",
+  "filmId": 5,
+  "clientId": 11,
+  "comment": "Explicabo quo sed autem dicta accusantium doloremque quis amet at laboriosam.",
+  "evaluation": 1.3,
+  "createdAt": "2024-11-15T03:12:38.053480Z"
+},
+{
+  "_id": "b273340f-5f80-4495-817d-127ce3989794",
+  "filmId": 4,
+  "clientId": 11,
+  "comment": "Culpa consequuntur qui cum quibusdam error fugiat modi tempore cupiditate atque.",
+  "evaluation": 3.6,
+  "createdAt": "2024-11-13T03:12:38.053480Z"
+},
+{
+  "_id": "301d1404-9567-4fda-87c8-f9930bcf7f09",
+  "filmId": 7,
+  "clientId": 17,
+  "comment": "Occaecati enim nihil aut vel accusantium provident possimus totam cum.",
+  "evaluation": 4.4,
+  "createdAt": "2025-03-13T03:12:38.053480Z"
+},
+{
+  "_id": "099e2659-db8a-4bd5-b332-586c8a547757",
+  "filmId": 9,
+  "clientId": 12,
+  "comment": "Totam neque sit quod fugiat est aliquam tenetur molestias occaecati animi nam delectus.",
+  "evaluation": 2.7,
+  "createdAt": "2024-06-21T03:12:38.053480Z"
+},
+{
+  "_id": "5c94e192-8c01-4ee8-bd03-a75980477372",
+  "filmId": 5,
+  "clientId": 9,
+  "comment": "Ipsum veniam rerum autem vero voluptas repudiandae.",
+  "evaluation": 2,
+  "createdAt": "2024-09-20T03:12:38.053480Z"
+},
+{
+  "_id": "dc6bdc2e-863b-4a04-b80e-20a052c9e137",
+  "filmId": 9,
+  "clientId": 5,
+  "comment": "Repudiandae corrupti ex minus architecto reprehenderit soluta eos saepe numquam.",
+  "evaluation": 3.2,
+  "createdAt": "2025-01-18T03:12:38.053480Z"
+},
+{
+  "_id": "d91d2a74-b8bb-4893-ba94-5285bbdcd0ce",
+  "filmId": 14,
+  "clientId": 14,
+  "comment": "Id ad ut facere omnis provident quos maxime.",
+  "evaluation": 1.6,
+  "createdAt": "2025-02-03T03:12:38.053480Z"
+},
+{
+  "_id": "67f87a46-eb13-4e10-9810-e4b74e1dccca",
+  "filmId": 2,
+  "clientId": 1,
+  "comment": "Velit error iusto consectetur sit quia cum autem accusantium nisi quidem odit est.",
+  "evaluation": 3.4,
+  "createdAt": "2024-08-14T03:12:38.053480Z"
+},
+{
+  "_id": "5c37fcf6-bb86-4857-8fd5-47dc15141005",
+  "filmId": 18,
+  "clientId": 10,
+  "comment": "Doloribus ut dolor laborum non consequatur debitis aliquam culpa.",
+  "evaluation": 1.1,
+  "createdAt": "2024-08-06T03:12:38.053480Z"
+},
+{
+  "_id": "10b28cc6-b9ff-485f-b888-412912fe28f2",
+  "filmId": 8,
+  "clientId": 6,
+  "comment": "Molestiae optio nulla ut iure ratione esse id dolor illo.",
+  "evaluation": 4.6,
+  "createdAt": "2024-07-18T03:12:38.053480Z"
+},
+{
+  "_id": "1875da12-a45a-4f79-8321-42e1e88717d4",
+  "filmId": 7,
+  "clientId": 19,
+  "comment": "Ipsa itaque magni occaecati laudantium exercitationem.",
+  "evaluation": 1.8,
+  "createdAt": "2025-03-30T03:12:38.053480Z"
+},
+{
+  "_id": "27b5b23d-a7e6-45be-80bb-33bd8607b5ea",
+  "filmId": 18,
+  "clientId": 7,
+  "comment": "Quibusdam odio quidem consequuntur ducimus saepe tempora debitis.",
+  "evaluation": 4.2,
+  "createdAt": "2024-12-22T03:12:38.053480Z"
+},
+{
+  "_id": "f32bec6f-7767-4ea1-8fb9-d8facdca5890",
+  "filmId": 1,
+  "clientId": 12,
+  "comment": "Sint doloribus voluptas dolorem necessitatibus illum saepe dolores voluptate molestiae debitis dolor cum.",
+  "evaluation": 2.2,
+  "createdAt": "2025-03-28T03:12:38.053480Z"
+},
+{
+  "_id": "3b716b96-eb28-490e-9774-1f3ea86d5d41",
+  "filmId": 9,
+  "clientId": 5,
+  "comment": "Mollitia perferendis provident molestias illum ducimus voluptatibus doloribus distinctio aspernatur maiores.",
+  "evaluation": 1.7,
+  "createdAt": "2025-02-14T03:12:38.053480Z"
+},
+{
+  "_id": "9a0ef683-83f5-4b1c-91f8-725b4a044d57",
+  "filmId": 18,
+  "clientId": 11,
+  "comment": "Corporis optio quis illo ipsam aliquam incidunt.",
+  "evaluation": 1.4,
+  "createdAt": "2024-07-16T03:12:38.053480Z"
+},
+{
+  "_id": "fba749e3-41ca-46b3-851a-ce0550210895",
+  "filmId": 18,
+  "clientId": 10,
+  "comment": "Veniam voluptate officiis iure quod earum excepturi ipsa.",
+  "evaluation": 4.2,
+  "createdAt": "2024-11-21T03:12:38.053480Z"
+},
+{
+  "_id": "dfa13975-9fe8-4077-a3ca-77ea2d6fbb9e",
+  "filmId": 11,
+  "clientId": 1,
+  "comment": "Vero nulla sit laborum dolore consequuntur distinctio animi.",
+  "evaluation": 3.5,
+  "createdAt": "2025-05-20T03:12:38.053480Z"
+},
+{
+  "_id": "35b11408-982b-4b52-b0b6-b50da2cc5f3f",
+  "filmId": 10,
+  "clientId": 9,
+  "comment": "Rerum commodi recusandae nam quibusdam voluptate odit dignissimos sed nulla cumque.",
+  "evaluation": 3.5,
+  "createdAt": "2025-02-23T03:12:38.053480Z"
+},
+{
+  "_id": "aa180448-a064-499e-b2fe-75e912a44806",
+  "filmId": 19,
+  "clientId": 18,
+  "comment": "Eligendi ipsam repudiandae esse eligendi voluptas vel voluptate corporis error tempora nam error.",
+  "evaluation": 2.9,
+  "createdAt": "2024-08-15T03:12:38.053480Z"
+},
+{
+  "_id": "3612243f-04ae-4a34-a801-ae9e1889e8c9",
+  "filmId": 4,
+  "clientId": 20,
+  "comment": "Voluptatum laboriosam iste quasi facilis odio facere sunt mollitia quam provident fugit optio.",
+  "evaluation": 1.7,
+  "createdAt": "2025-02-27T03:12:38.053480Z"
+}]
